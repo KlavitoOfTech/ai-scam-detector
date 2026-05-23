@@ -20,6 +20,26 @@ body{
   text-align:center;
 }
 
+input{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+.toggle{
+  color:blue;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.logout{
+  margin-top:20px;
+  background:#d9534f;
+}
+
 .subtitle{
   color: #666;
   font-size: 15px;
