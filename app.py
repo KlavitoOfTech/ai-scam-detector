@@ -12,6 +12,20 @@ from flask_jwt_extended import (
 # Load model
 model = joblib.load("spam_model.pkl")
 
+# Scam keywords
+scam_keywords = [
+    "free",
+    "crypto",
+    "airdrop",
+    "claim",
+    "winner",
+    "gift",
+    "wallet",
+    "urgent",
+    "bonus",
+    "google"
+]
+
 # Create app
 app = Flask(__name__)
 CORS(app)
@@ -54,8 +68,21 @@ def predict():
             "message": "Free trial finished. Upgrade required."
         }), 403
 
-    # Predict spam
+    # Convert message to lowercase
+    message_lower = message.lower()
+
+    # Check scam keywords
+    keyword_detected = any(
+    word in message_lower
+    for word in scam_keywords
+    )
+
+    # ML prediction
     prediction = model.predict([message])[0]
+
+    # Force spam if keywords detected
+    if keyword_detected:
+        prediction = "spam"
 
     # Reduce trial count
     cursor.execute(
