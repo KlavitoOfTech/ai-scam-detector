@@ -156,7 +156,7 @@ function App() {
 
       <div className="card">
 
-        <h1>🛡 AI Scam Detector</h1>
+        <h1>🛡 TrustScan</h1>
 
         {!token ? (
 
