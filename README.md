@@ -1,4 +1,4 @@
-# 🛡 AI Scam Detector
+# 🛡 Scam Detector
 
 An AI-powered web application that detects spam and suspicious scam messages using Machine Learning.
 
