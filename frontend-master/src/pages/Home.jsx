@@ -1,5 +1,20 @@
 import "../App.css";
 import logo from "../assets/trustscan.png";
+import {
+  Shield,
+  AlertTriangle,
+  Globe,
+  Puzzle,
+  Zap,
+  LogIn,
+  Lock,
+  ArrowRight,
+  LayoutDashboard,
+  Mail,
+  MessageCircle,
+  X,
+  Send
+} from "lucide-react";
 
 function Home() {
 
@@ -35,6 +50,7 @@ function Home() {
               window.location.href = "/login"
             }
           >
+            <LogIn size={18} />
             Login
           </button>
 
@@ -48,6 +64,7 @@ function Home() {
 
         <div className="hero-content">
           <p className="mini-title">
+            <Shield size={16} />
             Safer browsing starts here.
           </p>
           <h1>
@@ -64,12 +81,14 @@ function Home() {
           <div className="hero-buttons">
 
             <button
+                className="hero-btn"
                 onClick={() =>
                 window.location.href =
                 "/signup"
                 }
             >
                 Get Started
+                <ArrowRight size={20} />
             </button>
 
             <button
@@ -80,6 +99,7 @@ function Home() {
                 }
             >
                 Open Dashboard
+                <LayoutDashboard size={20} />
             </button>
           </div>
 
@@ -89,20 +109,100 @@ function Home() {
 
       {/* FEATURES */}
 
-      <section
-        className="features"
-        id="features"
-      >
+        <section
+          className="features"
+          id="features"
+        >
 
-        <h2>
-          Why TrustScan?
-        </h2>
+          <h2 className="mini-title">
+            <Lock size={38} />
+            Why TrustScan?
+          </h2>
+
+          <section className="feature-showcase">
+
+          <div className="showcase-row">
+
+            <div className="showcase-image">
+              <img
+                src="/images/scam-dashboard.png"
+                alt="TrustScan Dashboard"
+              />
+            </div>
+
+            <div className="showcase-content">
+
+              <span className="feature-badge">
+                AI Protection
+              </span>
+
+              <h2>
+                Detect scams before they cause damage
+              </h2>
+
+              <p>
+                TrustScan uses machine learning to analyze
+                suspicious messages, emails, and links in
+                seconds, helping users identify scams before
+                they become victims.
+              </p>
+
+              <ul>
+                <li>Real-time scam detection</li>
+                <li>Advanced phishing analysis</li>
+                <li>Instant risk scoring</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div className="showcase-row reverse">
+
+            <div className="showcase-image">
+              <img
+                src="/images/url-scanner.png"
+                alt="URL Scanner"
+              />
+            </div>
+
+            <div className="showcase-content">
+
+              <span className="feature-badge">
+                URL Scanner
+              </span>
+
+              <h2>
+                Stay safe while browsing online
+              </h2>
+
+              <p>
+                Scan suspicious websites before visiting
+                them. TrustScan identifies phishing pages,
+                fake login portals, and dangerous domains.
+              </p>
+
+              <ul>
+                <li>Detect fake websites</li>
+                <li>Check domain reputation</li>
+                <li>Prevent credential theft</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </section>
 
         <div className="feature-grid">
 
           <div className="feature-card">
 
-            <h3>🚨 Scam Detection</h3>
+            <div className="feature-icon">
+              <AlertTriangle size={34} />
+            </div>
+
+            <h3>Scam Detection</h3>
 
             <p>
               Analyze suspicious messages
@@ -113,7 +213,11 @@ function Home() {
 
           <div className="feature-card">
 
-            <h3>🔗 URL Scanner</h3>
+            <div className="feature-icon">
+              <Globe size={34} />
+            </div>
+
+            <h3>URL Scanner</h3>
 
             <p>
               Detect dangerous phishing
@@ -123,8 +227,13 @@ function Home() {
           </div>
 
           <div className="feature-card">
+            
+            <div className="feature-icon">
+              <Puzzle size={34} />
+            </div>
 
-            <h3>🤖 Browser Extension</h3>
+
+            <h3>Browser Extension</h3>
 
             <p>
               Real-time protection directly
@@ -135,7 +244,11 @@ function Home() {
 
           <div className="feature-card">
 
-            <h3>⚡ Fast AI Analysis</h3>
+            <div className="feature-icon">
+              <Zap size={34} />
+            </div>
+
+            <h3>Fast AI Analysis</h3>
 
             <p>
               Machine learning powered scam
@@ -149,44 +262,151 @@ function Home() {
       </section>
 
       {/* ABOUT */}
-
       <section
         className="about-section"
         id="about"
       >
-
         <div className="about-card">
 
+          <span className="about-badge">
+            AI-Powered Cybersecurity
+          </span>
+
           <h2>
-            About TrustScan
+            Protecting Users With Next-Generation AI
           </h2>
 
-          <p>
-
-            TrustScan is an AI cybersecurity
-            platform focused on helping users
-            identify scams, phishing attacks,
-            fraudulent messages and fake websites.
-
+          <p className="about-description">
+            TrustScan combines advanced Artificial Intelligence,
+            machine learning, and threat intelligence to detect
+            scams, phishing attempts, fake websites, and malicious
+            messages before they cause harm.
           </p>
 
+          <div className="about-grid">
+
+             <div className="about-slider">
+
+                <div className="about-track">
+
+                  <div className="about-feature">
+                    <h3>AI Detection</h3>
+                    <p>
+                      Instantly analyzes suspicious messages,
+                      links, and websites.
+                    </p>
+                  </div>
+
+                  <div className="about-feature">
+                    <h3>Real-Time Analysis</h3>
+                    <p>
+                      Receive immediate risk assessments and
+                      security recommendations.
+                    </p>
+                  </div>
+
+                  <div className="about-feature">
+                    <h3>Threat Intelligence</h3>
+                    <p>
+                      Continuously learns from emerging threats.
+                    </p>
+                  </div>
+
+                  {/* Duplicate cards for seamless looping */}
+
+                  <div className="about-feature">
+                    <h3>AI Detection</h3>
+                    <p>
+                      Instantly analyzes suspicious messages,
+                      links, and websites.
+                    </p>
+                  </div>
+
+                  <div className="about-feature">
+                    <h3>Real-Time Analysis</h3>
+                    <p>
+                      Receive immediate risk assessments and
+                      security recommendations.
+                    </p>
+                  </div>
+
+                  <div className="about-feature">
+                    <h3>Threat Intelligence</h3>
+                    <p>
+                      Continuously learns from emerging threats.
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+          </div>
+
+          <div className="about-stats">
+
+            <div className="stat">
+              <h3>24/7</h3>
+              <span>AI Monitoring</span>
+            </div>
+
+            <div className="stat">
+              <h3>Instant</h3>
+              <span>Threat Detection</span>
+            </div>
+
+            <div className="stat">
+              <h3>AI</h3>
+              <span>Powered Security</span>
+            </div>
+
+          </div>
+
         </div>
-
       </section>
-
       {/* CONTACT */}
+      <section className="contact-section" id="contact">
 
-      <section
-        className="contact-section"
-        id="contact"
-      >
+        <div className="contact-card">
 
-        <h2>Contact</h2>
+          <span className="contact-badge">
+            Get in Touch
+          </span>
 
-        <p>
-          Email: trustscan@email.com
-        </p>
+          <h2>Contact Our Team</h2>
 
+          <p className="contact-subtext">
+            Reach out for support, partnerships, or security inquiries.
+          </p>
+
+          <div className="contact-grid">
+
+            <a href="mailto:trustscan@email.com" className="contact-item">
+              <Mail size={32} />
+              Email
+              <span>trustscan@email.com</span>
+            </a>
+
+            <a href="https://wa.me/234XXXXXXXXXX" className="contact-item">
+              <MessageCircle size={32} />
+              WhatsApp
+              <span>Chat with us instantly</span>
+            </a>
+
+            <a href="https://x.com/yourhandle" className="contact-item">
+              <X size={32} />
+              X (Twitter)
+              <span>@trustscan</span>
+            </a>
+
+            <a href="https://t.me/yourchannel" className="contact-item">
+              <Send size={32} />
+              Telegram
+              <span>Join updates & alerts</span>
+            </a>
+
+          </div>
+        </div>
       </section>
 
     </div>
